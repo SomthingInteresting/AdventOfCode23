@@ -20,3 +20,36 @@ treb7uchet
 In this example, the calibration values of these four lines are 12, 38, 15, and 77. Adding these together produces 142.
 
 Consider your entire calibration document. What is the sum of all of the calibration values?
+
+Planning:
+
+function getCalibrationSum(filePath) {
+    // Read the file
+    data = readFile(filePath)
+
+    // Split the data into lines
+    lines = splitDataIntoLines(data)
+
+    // Initialize sum to 0
+    sum = 0
+
+    // For each line
+    for each line in lines {
+        // Get the first and last digit
+        firstDigit = getFirstDigit(line)
+        lastDigit = getLastDigit(line)
+
+        // Combine the digits into a two-digit number
+        calibrationValue = combineDigits(firstDigit, lastDigit)
+
+        // Add the calibration value to the sum
+        sum = sum + calibrationValue
+    }
+
+    // Return the sum
+    return sum
+}
+
+Thoughts:
+Doing this in Python would be easier when it comes to reading the file.  
+Stick to JS and just find out how to read the file.
